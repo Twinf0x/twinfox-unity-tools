@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Twinfox
 {
+#if UNITY_EDITOR
     public static class ToolsMenu
     {
         [MenuItem("Tools/Setup/Setup Folder Structure")]
@@ -21,4 +22,5 @@ namespace Twinfox
             }
         }
     }
+#endif
 }
