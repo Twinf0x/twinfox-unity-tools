@@ -5,6 +5,7 @@ using System;
 
 namespace Twinfox.EditorTools
 {
+#if UNITY_EDITOR
     /// <summary>
     /// Code is take from this Unity forum thread:
     /// https://forum.unity.com/threads/editor-tool-better-scriptableobject-inspector-editing.484393/
@@ -150,5 +151,6 @@ namespace Twinfox.EditorTools
             EditorGUI.HelpBox(rect, "", MessageType.None);
         }
     }
+#endif
 }
 
