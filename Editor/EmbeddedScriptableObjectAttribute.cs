@@ -1,6 +1,9 @@
-using UnityEditor;
+using UnityEngine;
 
-namespace Twinfox.Editor
+namespace Twinfox.EditorTools
 {
-    public class EmbeddedScriptableObjectAttribute : PropertyAttribute { }
+    public class EmbeddedScriptableObjectAttribute : PropertyAttribute 
+    {
+        public EmbeddedScriptableObjectAttribute() { }
+    }
 }

@@ -2,7 +2,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace Twinfox.Editor
+namespace Twinfox.EditorTools
 {
 #if UNITY_EDITOR
     public static class ToolsMenu
