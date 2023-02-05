@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Twinfox.EditorTools
 {
 #if UNITY_EDITOR
-    public static class ToolsMenu
+    public static class SetupMenu
     {
         [MenuItem("Tools/Setup/Setup Folder Structure")]
         public static void SetupFolderStructure()
