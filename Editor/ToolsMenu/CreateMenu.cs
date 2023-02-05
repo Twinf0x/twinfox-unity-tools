@@ -9,7 +9,7 @@ namespace Twinfox.EditorTools
         [MenuItem("Assets/Create/Code/MonoBehaviour", priority = 40)]
         public static void CreateNewMonoBehaviour()
         {
-            string templatePath = "Packages/com.twinfox.tools/ScriptTemplates/NewBehaviourScript.cs.txt";
+            string templatePath = "Packages/com.twinfox.tools/Editor/ScriptTemplates/NewBehaviourScript.cs.txt";
 
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(templatePath, "NewScript.cs");
         }
@@ -17,7 +17,7 @@ namespace Twinfox.EditorTools
         [MenuItem("Assets/Create/Code/ScriptableObject", priority = 41)]
         public static void CreateNewScriptableObject()
         {
-            string templatePath = "Packages/com.twinfox.tools/ScriptTemplates/NewScriptableObject.cs.txt";
+            string templatePath = "Packages/com.twinfox.tools/Editor/ScriptTemplates/NewScriptableObject.cs.txt";
 
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(templatePath, "NewScriptableObject.cs");
         }
@@ -25,7 +25,7 @@ namespace Twinfox.EditorTools
         [MenuItem("Assets/Create/Code/Enum", priority = 42)]
         public static void CreateNewEnum()
         {
-            string templatePath = "Packages/com.twinfox.tools/ScriptTemplates/NewEnum.cs.txt";
+            string templatePath = "Packages/com.twinfox.tools/Editor/ScriptTemplates/NewEnum.cs.txt";
 
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(templatePath, "NewEnum.cs");
         }
