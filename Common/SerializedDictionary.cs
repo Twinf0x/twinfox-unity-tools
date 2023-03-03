@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Twinfox
@@ -28,7 +29,7 @@ namespace Twinfox
             }
         }
 
-        [SerializeField] private List<Pair> entries = new();
+        [SerializeField] private Pair[] entries = new Pair[0];
 
         public SerializedDictionary() { }
 
@@ -36,15 +37,23 @@ namespace Twinfox
 
         public void OnBeforeSerialize()
         {
-            entries.Clear();
-            foreach (var pair in this)
+            // Copy dict to entries
+            if (entries != null)
             {
-                entries.Add(pair);
+                return;
+            }
+
+            int i = 0;
+            entries = new Pair[this.Count];
+            foreach (var kvp in this)
+            {
+                entries[i++] = kvp;
             }
         }
 
         public void OnAfterDeserialize()
         {
+            // Copy entries to dict
             Clear();
             foreach (var entry in entries)
             {
