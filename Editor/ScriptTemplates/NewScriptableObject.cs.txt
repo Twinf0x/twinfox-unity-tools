@@ -1,9 +1,9 @@
 using UnityEngine;
 
 #ROOTNAMESPACEBEGIN#
-[CreateAssetMenu(menuName = "Custom/#SCRIPTNAME#", fileName = "New #SCRIPTNAME#")]
-public class #SCRIPTNAME# : ScriptableObject
-{
-    #NOTRIM#
-}
+    [CreateAssetMenu(menuName = "Custom/#SCRIPTNAME#", fileName = "New #SCRIPTNAME#")]
+    public class #SCRIPTNAME# : ScriptableObject
+    {
+        #NOTRIM#
+    }
 #ROOTNAMESPACEEND#

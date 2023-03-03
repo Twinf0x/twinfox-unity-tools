@@ -1,8 +1,8 @@
 using UnityEngine;
 
 #ROOTNAMESPACEBEGIN#
-public enum #SCRIPTNAME#
-{
-    #NOTRIM#
-}
+    public enum #SCRIPTNAME#
+    {
+        #NOTRIM#
+    }
 #ROOTNAMESPACEEND#
