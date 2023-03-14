@@ -76,7 +76,7 @@ namespace Twinfox.EditorTools
 
             EditorGUILayout.EndHorizontal();
 
-            _scrollPos = GUILayout.BeginScrollView(_scrollPos, GUILayout.Width(250), GUILayout.Height(250));
+            _scrollPos = GUILayout.BeginScrollView(_scrollPos, GUILayout.Height(500));
             _selectedIcon = GUILayout.SelectionGrid(_selectedIcon, _icons.ToArray(), 5);
             GUILayout.EndScrollView();
 
