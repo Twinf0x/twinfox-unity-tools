@@ -11,6 +11,7 @@ namespace Twinfox.EditorTools
         private const string MENU_PATH = "Assets/Edit/Set Icon";
         private List<Texture2D> _icons = null;
         private int _selectedIcon = 0;
+        private Vector2 _scrollPos;
 
         [MenuItem(MENU_PATH, priority = 0)]
         public static void ShowMenuItem()
@@ -60,7 +61,24 @@ namespace Twinfox.EditorTools
                 return;
             }
 
+            EditorGUILayout.BeginHorizontal();
+
+            if (GUILayout.Button("Cancel", GUILayout.Width(125)))
+            {
+                Close();
+            }
+
+            if (GUILayout.Button("Apply", GUILayout.Width(125)))
+            {
+                ApplyIcon(_icons[_selectedIcon]);
+                Close();
+            }
+
+            EditorGUILayout.EndHorizontal();
+
+            _scrollPos = GUILayout.BeginScrollView(_scrollPos, GUILayout.Width(250), GUILayout.Height(250));
             _selectedIcon = GUILayout.SelectionGrid(_selectedIcon, _icons.ToArray(), 5);
+            GUILayout.EndScrollView();
 
             // Listen for input
             if (Event.current == null)
@@ -85,12 +103,6 @@ namespace Twinfox.EditorTools
                 }
             }
             else if (Event.current.button == 0 && Event.current.clickCount == 2)
-            {
-                ApplyIcon(_icons[_selectedIcon]);
-                Close();
-            }
-
-            if (GUILayout.Button("Apply", GUILayout.Width(100)))
             {
                 ApplyIcon(_icons[_selectedIcon]);
                 Close();
