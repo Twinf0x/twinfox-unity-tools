@@ -64,7 +64,7 @@ namespace Twinfox.EditorTools
             Rect fieldRect = new Rect(position);
             fieldRect.height = EditorGUIUtility.singleLineHeight;
 
-            EditorGUI.PropertyField(fieldRect, property, label, true);
+            EditorGUI.PropertyField(fieldRect, property, new GUIContent("."), true);
 
             if (property.objectReferenceValue == null)
             {
