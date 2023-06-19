@@ -63,7 +63,6 @@ namespace Twinfox.EditorTools
         {
             Rect fieldRect = new Rect(position);
             fieldRect.height = EditorGUIUtility.singleLineHeight;
-            fieldRect.x += INNER_SPACING;
 
             EditorGUI.PropertyField(fieldRect, property, label, true);
 
@@ -72,7 +71,7 @@ namespace Twinfox.EditorTools
                 return;
             }
 
-            property.isExpanded = EditorGUI.Foldout(fieldRect, property.isExpanded, GUIContent.none, true);
+            property.isExpanded = EditorGUI.Foldout(fieldRect, property.isExpanded, label, true);
 
             if (!property.isExpanded)
             {
