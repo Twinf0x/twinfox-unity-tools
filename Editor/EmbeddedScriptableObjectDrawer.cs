@@ -63,6 +63,7 @@ namespace Twinfox.EditorTools
         {
             Rect fieldRect = new Rect(position);
             fieldRect.height = EditorGUIUtility.singleLineHeight;
+            fieldRect.x += INNER_SPACING;
 
             EditorGUI.PropertyField(fieldRect, property, label, true);
 
