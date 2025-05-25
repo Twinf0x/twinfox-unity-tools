@@ -44,7 +44,28 @@ namespace Twinfox.EditorTools
                 if (fields.Any(field => IsFieldUnassigned(field.GetValue(component))))
                 {
                     Rect iconRect = new Rect(selectionRect.xMax - 18, selectionRect.y, 16, 16);
-                    GUI.Label(iconRect, new GUIContent(requiredIcon, "This component has required fields that are not assigned."), EditorStyles.label);
+                    GUI.Label(iconRect, new GUIContent(requiredIcon, "This object has required fields that are not assigned."), EditorStyles.label);
+                    break;
+                }
+            }
+
+            foreach (var component in gameObject.GetComponentsInChildren<Component>())
+            {
+                if (component == null)
+                {
+                    continue;
+                }
+
+                var fields = GetRequiredFields(component.GetType());
+                if (fields == null)
+                {
+                    continue;
+                }
+
+                if (fields.Any(field => IsFieldUnassigned(field.GetValue(component))))
+                {
+                    Rect iconRect = new Rect(selectionRect.xMax - 18, selectionRect.y, 16, 16);
+                    GUI.Label(iconRect, new GUIContent(requiredIcon, "A child of this object has required fields that are not assigned."), EditorStyles.label);
                     break;
                 }
             }
